@@ -1,0 +1,45 @@
+/* Determinar a cuánto es igual la suma de los elementos de la serie de Fibo- nacci entre 0 y 100. */
+
+ /* Por Darwin Chuquimarca */ 
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num, suma = 0, cantidad = 0;
+
+    printf("Ingrese números hasta que ingrese 0:\n");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        int es_primo = 1;
+
+        // verificar si el número es primo
+        for (int i = 2; i < num; ++i) {
+            if (num % i == 0) {
+                es_primo = 0;
+                break;
+            }
+        }
+
+        // si el número es primo, agregarlo a la suma
+        if (es_primo) {
+            suma += num;
+            cantidad++;
+        }
+
+        // leer el siguiente número
+        scanf("%d", &num);
+    }
+
+    // si se leyó al menos un número primo, calcular el promedio
+    if (cantidad > 0) {
+        int promedio = suma / cantidad;
+        printf("El promedio entero de los números primos ingresados es: %d\n", promedio);
+    } else {
+        printf("No se ingresaron números primos.\n");
+    }
+
+    return 0;
+}

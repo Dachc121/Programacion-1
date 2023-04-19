@@ -1,0 +1,12 @@
+/*Mostrar en pantalla los primeros 20 múltiplos de 3. */
+
+ /* Por Darwin Chuquimarca */ 
+    #include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 20; ++i) {
+        printf("%d\n", 3 * i);
+    }
+
+    return 0;
+}

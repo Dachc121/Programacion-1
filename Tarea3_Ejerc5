@@ -1,0 +1,33 @@
+/* Leer dos números y mostrar todos los números terminados en 4 com- prendidos entre ellos. */
+
+ /* Por Darwin Chuquimarca */ 
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Ingrese el primer número: ");
+    scanf("%d", &num1);
+
+    printf("Ingrese el segundo número: ");
+    scanf("%d", &num2);
+
+    // asegurarse de que num1 sea el menor de los dos
+    if (num1 > num2) {
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
+
+    printf("Los números terminados en 4 comprendidos entre %d y %d son:\n", num1, num2);
+
+    // iterar por los números entre num1 y num2, incluyéndolos
+    for (int i = num1; i <= num2; ++i) {
+        if (i % 10 == 4) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}

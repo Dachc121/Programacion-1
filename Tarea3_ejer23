@@ -1,0 +1,42 @@
+/* Leer un número entero y determinar si la suma de sus dígitos es también un número primo. */
+
+/* Por Darwin Chuquimarca */ 
+
+#include <stdio.h>
+
+int es_primo(int num) {
+    if (num < 2) {
+        return 0;
+    }
+
+    for (int i = 2; i < num; ++i) {
+        if (num % i == 0) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+int main() {
+    int num, suma = 0;
+
+    printf("Ingrese un número entero: ");
+    scanf("%d", &num);
+
+    // calcular la suma de los dígitos del número
+    while (num != 0) {
+        suma += num % 10;
+        num /= 10;
+    }
+
+    // verificar si la suma de los dígitos es primo
+    if (es_primo(suma)) {
+        printf("La suma de los dígitos (%d) es un número primo.\n", suma);
+    } else {
+        printf("La suma de los dígitos (%d) no es un número primo.\n", suma);
+    }
+
+    return 0;
+}
+
