@@ -1,0 +1,33 @@
+
+# Función para sumar dos matrices
+
+def suma_matrices(matriz1, matriz2):
+    if len(matriz1) != len(matriz2) or len(matriz1[0]) != len(matriz2[0]):
+        print("Las matrices no tienen las mismas dimensiones.")
+        return None
+
+    filas = len(matriz1)
+    columnas = len(matriz1[0])
+    resultado = []
+
+    for i in range(filas):
+        fila_resultado = []
+        for j in range(columnas):
+            suma = matriz1[i][j] + matriz2[i][j]
+            fila_resultado.append(suma)
+        resultado.append(fila_resultado)
+
+    return resultado
+
+# Ejemplo de uso
+matriz_a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matriz_b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+resultado_suma = suma_matrices(matriz_a, matriz_b)
+
+print("Resultado de la suma de matrices:")
+
+for fila in resultado_suma:
+    
+    print(fila) 
+    
